@@ -1,4 +1,5 @@
 
+#!/usr/bin/env python3
 #https://github.com/peterbrittain/asciimatics
 # https://stackoverflow.com/questions/9632995/how-to-easily-print-ascii-art-text
 import sys
@@ -264,13 +265,19 @@ class bcolors:
 
 
 def main():		
-
-	os.system('printf "\033c"')
-	print('''
-	Hello and Welcome to 
-	''')
-	cprint(figlet_format('HANGMAN', font='slant'),'yellow', 'on_red', attrs=['bold'])
-	print('''
+  os.system('printf "\033c"')
+  print('''
+    Hello and Welcome to 
+   ''')
+  print('''
+      ██╗░░██╗░█████╗░███╗░░██╗░██████╗░███╗░░░███╗░█████╗░███╗░░██╗░██████╗░
+      ██║░░██║██╔══██╗████╗░██║██╔════╝░████╗░████║██╔══██╗████╗░██║██╔════╝░
+      ███████║███████║██╔██╗██║██║░░██╗░██╔████╔██║███████║██╔██╗██║██║░░██╗░
+      ██╔══██║██╔══██║██║╚████║██║░░╚██╗██║╚██╔╝██║██╔══██║██║╚████║██║░░╚██╗
+      ██║░░██║██║░░██║██║░╚███║╚██████╔╝██║░╚═╝░██║██║░░██║██║░╚███║╚██████╔╝
+      ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░
+    ''')
+  print('''
 Please select one of the following:
 
 	1. PLAY
@@ -279,19 +286,19 @@ Please select one of the following:
 
 	''')
 
-	selection = input('Selection: ')
-	if selection == str(1):
-		os.system('printf "\033c"')		
-		win,hangmanword,diffucultyValue = inputDifficulty()
-		gameOver(hangmanword)
-	elif selection == str(2):
-		pass
-	elif selection == str(3):
-		os.system('printf "\033c"')
-		print(bcolors.OKGREEN + 'Thanks for playing HANGMAN. Have a nice day.'+bcolors.ENDC)
-		quit()
-	else:
-		main()
+  selection = input('Selection: ')
+  if selection == str(1):
+    os.system('printf "\033c"')		
+    win,hangmanword,diffucultyValue = inputDifficulty()
+    gameOver(hangmanword)
+  elif selection == str(2):
+    pass
+  elif selection == str(3):
+    os.system('printf "\033c"')
+    print(bcolors.OKGREEN + 'Thanks for playing HANGMAN. Have a nice day.'+bcolors.ENDC)
+    quit()
+  else:
+    main()
 
 
 
